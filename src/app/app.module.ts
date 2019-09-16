@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './home/home.component';
 import { DemoComponent } from './demo/demo.component';
+import { OktaAuthModule } from '@okta/okta-angular';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,12 @@ import { DemoComponent } from './demo/demo.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    OktaAuthModule.initAuth({
+      issuer: 'https://{yourOktaDomain}/oauth2/default',
+      redirectUri: 'http://localhost:4200/implicit/callback',
+      clientId: '{yourClientId}'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

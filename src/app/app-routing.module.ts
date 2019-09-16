@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { DemoComponent } from './demo/demo.component';
+import { OktaCallbackComponent, OktaAuthGuard } from '@okta/okta-angular';
 
 
 const routes: Routes = [
@@ -12,7 +13,13 @@ const routes: Routes = [
   {
     path: 'demo',
     component: DemoComponent,
-  },];
+    canActivate: [OktaAuthGuard]
+  },
+  {
+    path: 'implicit/callback',
+    component: OktaCallbackComponent
+  }
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
