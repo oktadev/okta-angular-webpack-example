@@ -19,9 +19,9 @@ import { OktaAuthModule } from '@okta/okta-angular';
     AppRoutingModule,
     BrowserAnimationsModule,
     OktaAuthModule.initAuth({
-      issuer: 'https://{yourOktaDomain}/oauth2/default',
+      issuer: 'https://dev-322018.oktapreview.com/oauth2/default',
       redirectUri: 'http://localhost:4200/implicit/callback',
-      clientId: '{yourClientId}'
+      clientId: '0oaipoqa789EAewTL0h7'
     })
   ],
   providers: [],
