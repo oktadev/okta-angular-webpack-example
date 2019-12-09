@@ -18,7 +18,7 @@ Please read [How to Customize Your Angular Build With Webpack](https://developer
 To install this example application, run the following commands:
 
 ```bash
-git clone https://github.com/oktadeveloper/okta-angular-webpck-example.git
+git clone https://github.com/oktadeveloper/okta-angular-webpack-example.git
 cd okta-angular-webpack-example
 ```
 
