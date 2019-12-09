@@ -9,13 +9,13 @@ declare const EXPERIMENTAL_FEATURE: boolean;
   styleUrls: ['./demo.component.css']
 })
 export class DemoComponent implements OnInit {
-  stable_feature: string;
-  experimental_feature: string;
+  stableFeature: string;
+  experimentalFeature: string;
 
   constructor() { }
 
   ngOnInit() {
-    this.stable_feature = STABLE_FEATURE ? "Stable feature enabled" : "Stable feature disabled";
-    this.experimental_feature = EXPERIMENTAL_FEATURE ? "Experimental feature enabled" : "Experimental feature disabled";
+    this.stableFeature = STABLE_FEATURE ? 'Stable feature enabled' : 'Stable feature disabled';
+    this.experimentalFeature = EXPERIMENTAL_FEATURE ? 'Experimental feature enabled' : 'Experimental feature disabled';
   }
 }
