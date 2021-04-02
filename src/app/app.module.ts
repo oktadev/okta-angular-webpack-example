@@ -6,7 +6,13 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './home/home.component';
 import { DemoComponent } from './demo/demo.component';
-import { OktaAuthModule } from '@okta/okta-angular';
+import { OKTA_CONFIG, OktaAuthModule } from '@okta/okta-angular';
+
+const oktaConfig = {
+    issuer: 'https://dev-322018.oktapreview.com/oauth2/default',
+    clientId: '0oaipoqa789EAewTL0h7',
+    redirectUri: window.location.origin + '/callback'
+};
 
 @NgModule({
   declarations: [
@@ -18,13 +24,9 @@ import { OktaAuthModule } from '@okta/okta-angular';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    OktaAuthModule.initAuth({
-      issuer: 'https://dev-322018.oktapreview.com/oauth2/default',
-      redirectUri: 'http://localhost:4200/implicit/callback',
-      clientId: '0oaipoqa789EAewTL0h7'
-    })
+    OktaAuthModule
   ],
-  providers: [],
+  providers: [{ provide: OKTA_CONFIG, useValue: oktaConfig }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
